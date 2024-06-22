@@ -18,12 +18,12 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
 
   async findOne(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
     this.logger.debug(`Finding a document...`);
-    const document = this.model.findOne(filterQuery).lean<TDocument>(true);
+    const document = await this.model
+      .findOne(filterQuery)
+      .lean<TDocument>(true);
 
     if (!document) {
-      this.logger.warn(
-        `Document was not found with filterQuery: ${filterQuery}.`,
-      );
+      this.logger.warn('Document was not found with filterQuery', filterQuery);
       throw new NotFoundException('Document was not found.');
     }
 
@@ -35,15 +35,13 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     update: UpdateQuery<TDocument>,
   ): Promise<TDocument> {
     this.logger.debug(`Finding and updating a document...`);
-    const document = this.model
+    const document = await this.model
       .findOneAndUpdate(filterQuery, update, {
         new: true,
       })
       .lean<TDocument>(true);
     if (!document) {
-      this.logger.warn(
-        `Document was not found with filterQuery: ${filterQuery}.`,
-      );
+      this.logger.warn('Document was not found with filterQuery', filterQuery);
       throw new NotFoundException('Document was not found.');
     }
 
@@ -52,20 +50,18 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
 
   async find(filterQuery: FilterQuery<TDocument>): Promise<TDocument[]> {
     this.logger.debug(`Finding documents...`);
-    return this.model.find(filterQuery).lean<TDocument[]>(true);
+    return await this.model.find(filterQuery).lean<TDocument[]>(true);
   }
 
   async findOneAndDelete(
     filterQuery: FilterQuery<TDocument>,
   ): Promise<TDocument> {
     this.logger.debug(`Finding and deleting a document...`);
-    const document = this.model
+    const document = await this.model
       .findOneAndDelete(filterQuery)
       .lean<TDocument>(true);
     if (!document) {
-      this.logger.warn(
-        `Document was not found with filterQuery: ${filterQuery}.`,
-      );
+      this.logger.warn('Document was not found with filterQuery', filterQuery);
       throw new NotFoundException('Document was not found.');
     }
 

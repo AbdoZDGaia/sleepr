@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "6f507f71-6079-4e55-b210-c27d6174f12a",
+		"name": "Reservations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14160458",
+		"_collection_link": "https://abdoz-dgaia.postman.co/workspace/Sleepr~c1950ab4-50c2-4f49-9fb5-cb37756715f0/collection/14160458-6f507f71-6079-4e55-b210-c27d6174f12a?action=share&source=collection_link&creator=14160458"
+	},
+	"item": [
+		{
+			"name": "Create new reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Newly created reservation example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c9-/uBUfnnVJZaTpipxnILsQQeu3qU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 22:58:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66760593a850013a424fb73a\",\n    \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n    \"startDate\": \"2022-12-19T21:00:00.000Z\",\n    \"endDate\": \"2022-12-24T21:00:00.000Z\",\n    \"userId\": \"123\",\n    \"placeId\": \"1111\",\n    \"invoiceId\": \"12123\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all reservations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all reservations example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"195-fA9FNSM3ooT92eifgTChy56QwCk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 22:59:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"66760593a850013a424fb73a\",\n        \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n        \"startDate\": \"2022-12-19T21:00:00.000Z\",\n        \"endDate\": \"2022-12-24T21:00:00.000Z\",\n        \"userId\": \"123\",\n        \"placeId\": \"1111\",\n        \"invoiceId\": \"12123\"\n    },\n    {\n        \"_id\": \"667605cca850013a424fb73c\",\n        \"timestamp\": \"2024-06-21T22:59:24.050Z\",\n        \"startDate\": \"2022-12-19T21:00:00.000Z\",\n        \"endDate\": \"2022-12-24T21:00:00.000Z\",\n        \"userId\": \"123\",\n        \"placeId\": \"1111\",\n        \"invoiceId\": \"12123\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a reservation by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						"66760593a850013a424fb73a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a reservation by Id example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations",
+								"66760593a850013a424fb73a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c9-/uBUfnnVJZaTpipxnILsQQeu3qU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 23:00:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66760593a850013a424fb73a\",\n    \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n    \"startDate\": \"2022-12-19T21:00:00.000Z\",\n    \"endDate\": \"2022-12-24T21:00:00.000Z\",\n    \"userId\": \"123\",\n    \"placeId\": \"1111\",\n    \"invoiceId\": \"12123\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a reservation",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"invoiceId\":\"113\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						"66760593a850013a424fb73a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fully updated reservation example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"12/20/2022\",\r\n    \"endDate\":\"12/25/2022\",\r\n    \"placeId\":\"1111\",\r\n    \"invoiceId\":\"12143\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations",
+								"66760593a850013a424fb73a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c9-aof3KBvMUWEhfNTqHSSZw0gTR50\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 23:02:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66760593a850013a424fb73a\",\n    \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n    \"startDate\": \"2022-12-19T21:00:00.000Z\",\n    \"endDate\": \"2022-12-24T21:00:00.000Z\",\n    \"userId\": \"123\",\n    \"placeId\": \"1111\",\n    \"invoiceId\": \"12143\"\n}"
+				},
+				{
+					"name": "Partially updated reservation example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"invoiceId\":\"113\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations",
+								"66760593a850013a424fb73a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c7-7QV+ts+BET1+5VHztcXpcs/jO6c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 23:03:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66760593a850013a424fb73a\",\n    \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n    \"startDate\": \"2022-12-19T21:00:00.000Z\",\n    \"endDate\": \"2022-12-24T21:00:00.000Z\",\n    \"userId\": \"123\",\n    \"placeId\": \"1111\",\n    \"invoiceId\": \"113\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a reservation",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"invoiceId\":\"113\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reservations",
+						"66760593a850013a424fb73a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Deleted reservation example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/reservations/66760593a850013a424fb73a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reservations",
+								"66760593a850013a424fb73a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c7-7QV+ts+BET1+5VHztcXpcs/jO6c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Jun 2024 23:04:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66760593a850013a424fb73a\",\n    \"timestamp\": \"2024-06-21T22:58:27.498Z\",\n    \"startDate\": \"2022-12-19T21:00:00.000Z\",\n    \"endDate\": \"2022-12-24T21:00:00.000Z\",\n    \"userId\": \"123\",\n    \"placeId\": \"1111\",\n    \"invoiceId\": \"113\"\n}"
+				}
+			]
+		}
+	]
+}
